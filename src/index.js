@@ -1,6 +1,7 @@
 import React from "react";
 import { css } from "styled-components";
 
+// TODO: Use a single string input and split based on space and search in the new array
 export default (fr=`1/3`,cycle=``,gutter=`30px`,flex=`no-flex`) => css`
   ${flex===`flex` && css`
     flex-grow: 0;
