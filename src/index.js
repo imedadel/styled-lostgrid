@@ -1,8 +1,14 @@
 import React from "react";
 import { css } from "styled-components";
 
-export default (fr=`1/3`,cycle=``,gutter=`30px`,flex=``) => css`
-  width: calc(99.9% * ${fr} - (30px - 30px * ${fr}));
+export default (fr=`1/3`,cycle=``,gutter=`30px`,flex=`no-flex`) => css`
+  ${flex===`flex` && css`
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(99.9% * ${fr} - (${gutter?gutter:`30px`} - ${gutter?gutter:`30px`} * ${fr}));
+    max-width: calc(99.9% * ${fr} - (${gutter?gutter:`30px`} - ${gutter?gutter:`30px`} * ${fr}));
+  `}
+  width: calc(99.9% * ${fr} - (${gutter?gutter:`30px`} - ${gutter?gutter:`30px`} * ${fr}));
   
   &:nth-child(1n) {
     float: left;

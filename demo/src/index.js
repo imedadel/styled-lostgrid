@@ -5,7 +5,7 @@ import styled from "styled-components"
 import grd from '../../src'
 
 const Div1 = styled.div`
-  ${grd(`2/3`,`2`)};
+  ${grd(`2/3`,`2`,`20px`,`flex`)};
 `
 const Div2 = styled.div`
   ${grd(`1/3`)};
