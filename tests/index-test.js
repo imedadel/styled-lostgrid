@@ -1,23 +1,17 @@
 import expect from 'expect'
 import React from 'react'
-import {render, unmountComponentAtNode} from 'react-dom'
+import styled from "styled-components"
+import {renderToStaticMarkup as render} from 'react-dom/server'
 
-import Component from 'src/'
+import lost from 'src/'
 
-describe('Component', () => {
-  let node
+const Div13 = styled.div`
+  ${lost.column(`1/3`)};
+`
 
-  beforeEach(() => {
-    node = document.createElement('div')
-  })
-
-  afterEach(() => {
-    unmountComponentAtNode(node)
-  })
-
-  it('displays a welcome message', () => {
-    render(<Component/>, node, () => {
-      expect(node.innerHTML).toContain('Welcome to React components')
-    })
+describe('Div13', () => {
+  it('renders a div with a specific width', () => {
+    expect(render(<Div13>Test</Div13>))
+      .toContain('</div>')
   })
 })
