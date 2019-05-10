@@ -2,8 +2,8 @@ import React from "react";
 import { css } from "styled-components";
 
 // TODO: Use a single string input and split based on space and search in the new array
-export default (fr=`1/3`,cycle=``,gutter=`30px`,flex=`no-flex`) => css`
-  ${flex===`flex` && css`
+const column = (fr=`1/3`,cycle=``,gutter=`30px`,flex=false) => css`
+  ${flex && css`
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: calc(99.9% * ${fr} - (${gutter?gutter:`30px`} - ${gutter?gutter:`30px`} * ${fr}));
@@ -27,3 +27,7 @@ export default (fr=`1/3`,cycle=``,gutter=`30px`,flex=`no-flex`) => css`
     clear: both;
   }
 `;
+
+export default {
+  column
+}
