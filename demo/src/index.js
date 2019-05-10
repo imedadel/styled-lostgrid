@@ -4,21 +4,26 @@ import styled from "styled-components"
 
 import lost from '../../src'
 
-const Div1 = styled.div`
+
+const BDiv = styled.div`
+  background-color: palevioletred;
+  color: white;
+`
+const Div23 = styled(BDiv)`
   ${lost.column(`2/3`)};
 `
-const Div2 = styled.div`
+const Div13 = styled(BDiv)`
   ${lost.column(`1/3`)};
 `
 
 const Demo = () => (
   <div>
-    <Div1>
-      One
-    </Div1>
-    <Div2>
-      Two
-    </Div2>
+    <Div23>
+      <pre>{lost.column(`2/3`)}</pre>
+    </Div23>
+    <Div13>
+    <pre>{lost.column(`1/3`)}</pre>
+    </Div13>
   </div>
 )
 
